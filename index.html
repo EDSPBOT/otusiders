@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Interactive study guide for Chapters 1-6 of The Outsiders by S.E. Hinton.">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>The Outsiders Ch. 1–6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: 1965 Tulsa at dusk. A sunset-and-rooftops header, a sticky tab bar, then one focused study panel at a time on a cool violet-grey ground. */
+:root{
+  --bg:#f3f3f8; --surface:#ffffff; --raised:#fbfbfe; --ink:#181c2c; --muted:#5d6278; --faint:#8a8fa3; --line:#e2e3ec; --line-strong:#cfd1de;
+  --dusk:#2b3468; --sunset:#d9572a; --rose:#bf3d67; --gold:#c98a12;
+  --soft:#ecedf5; --tint:#fdf1ea; --on-accent:#ffffff;
+  --good:#23804b; --bad:#b53a3a; --goodbg:#e3f4ea; --badbg:#fbe8e8;
+  --shadow:0 1px 2px rgba(24,28,44,.05),0 4px 16px -6px rgba(24,28,44,.10);
+  --shadow-lg:0 2px 4px rgba(24,28,44,.05),0 18px 40px -16px rgba(24,28,44,.22);
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --r:14px; --r-sm:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101219; --surface:#191c27; --raised:#1e2230; --ink:#eceef5; --muted:#a1a6bb; --faint:#767c93; --line:#2a2e3e; --line-strong:#3a3f53;
+  --dusk:#aeb8f2; --sunset:#f28a5c; --rose:#ec7ca1; --gold:#ecbb4f;
+  --soft:#242838; --tint:#2c2220; --on-accent:#1a120e;
+  --good:#6fd29a; --bad:#f08484; --goodbg:#16301f; --badbg:#3a1d21;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px -6px rgba(0,0,0,.4);
+  --shadow-lg:0 2px 4px rgba(0,0,0,.3),0 18px 40px -16px rgba(0,0,0,.6); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101219; --surface:#191c27; --raised:#1e2230; --ink:#eceef5; --muted:#a1a6bb; --faint:#767c93; --line:#2a2e3e; --line-strong:#3a3f53;
+  --dusk:#aeb8f2; --sunset:#f28a5c; --rose:#ec7ca1; --gold:#ecbb4f;
+  --soft:#242838; --tint:#2c2220; --on-accent:#1a120e;
+  --good:#6fd29a; --bad:#f08484; --goodbg:#16301f; --badbg:#3a1d21;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px -6px rgba(0,0,0,.4);
+  --shadow-lg:0 2px 4px rgba(0,0,0,.3),0 18px 40px -16px rgba(0,0,0,.6); color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:20px}
+@media (max-width:480px){.wrap{padding-inline:16px}}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1;margin:0;font-weight:800}
+h2{font-size:clamp(2rem,5vw,2.6rem);letter-spacing:.005em}
+h3{font-size:1.4rem;letter-spacing:.015em}
+p{margin:0}
+button{font-family:inherit}
+.label{font-family:var(--mono);font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.lede{color:var(--muted);max-width:62ch;font-size:1.02rem}
+.stack{display:grid;gap:10px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:6px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;color:#fff6ee;
+  background:linear-gradient(180deg,#1c2146 0%,#3d2d5e 32%,#8a3563 58%,#d4553a 82%,#f08a3c 100%)}
+.hero .sun{position:absolute;right:12%;bottom:-70px;width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle,#ffe7a8 0%,#ffc26b 45%,rgba(255,160,80,0) 70%);opacity:.9}
+.hero .stars{position:absolute;inset:0 0 50% 0;background-image:radial-gradient(1px 1px at 12% 20%,#fff9 50%,transparent 51%),radial-gradient(1px 1px at 28% 42%,#fff7 50%,transparent 51%),radial-gradient(1.5px 1.5px at 46% 14%,#fffb 50%,transparent 51%),radial-gradient(1px 1px at 63% 33%,#fff6 50%,transparent 51%),radial-gradient(1px 1px at 81% 11%,#fff9 50%,transparent 51%),radial-gradient(1px 1px at 92% 38%,#fff5 50%,transparent 51%)}
+.hero svg.skyline{position:absolute;left:0;right:0;bottom:0;width:100%;height:86px;display:block}
+.hero-inner{position:relative;padding-block:40px 116px;display:grid;gap:14px}
+.eyebrow{font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#ffd6bd}
+.hero h1{font-size:clamp(3.2rem,12vw,6.4rem);font-weight:900;text-transform:uppercase;letter-spacing:.01em;line-height:.88;text-shadow:0 2px 24px rgba(20,10,40,.35)}
+.hero h1 span{display:block;font-size:.42em;letter-spacing:.06em;color:#ffe2cf;font-weight:800;margin-top:10px}
+.hero p.sub{max-width:54ch;color:#ffeee3;font-size:1.05rem}
+.hero-progress{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:6px}
+.segs{display:flex;gap:6px}
+.segs button{width:38px;height:30px;border-radius:8px;border:1px solid rgba(255,255,255,.35);background:rgba(20,12,40,.25);color:#fff;font:600 .8rem var(--mono);cursor:pointer;backdrop-filter:blur(4px);transition:background .2s,transform .2s}
+.segs button:hover{transform:translateY(-1px);background:rgba(20,12,40,.4)}
+.segs button.done{background:#fff3d6;color:#6b2a1a;border-color:#fff3d6}
+.hero-progress .ptext{font-size:.9rem;color:#ffeee3}
+
+/* ---------- tabs ---------- */
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+.tablist{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-block:10px;mask-image:linear-gradient(90deg,#000 92%,transparent)}
+.tablist::-webkit-scrollbar{display:none}
+.tablist button{flex:none;display:inline-flex;align-items:center;gap:8px;font:600 .9rem var(--body);color:var(--muted);background:transparent;border:0;border-radius:999px;padding:9px 15px;cursor:pointer;transition:background .15s,color .15s}
+.tablist button:hover{color:var(--ink);background:var(--soft)}
+.tablist button[aria-selected="true"]{color:var(--on-accent);background:var(--ink)}
+.tablist svg{width:16px;height:16px;flex:none}
+
+main{padding-block:36px 72px}
+section.panel{display:grid;gap:28px;animation:rise .35s ease both}
+@keyframes rise{from{opacity:.001;transform:translateY(6px)}to{opacity:1;transform:none}}
+.panel-head{display:grid;gap:8px}
+
+/* ---------- generic surfaces ---------- */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:22px;display:grid;gap:14px;align-content:start;min-width:0}
+.tag{display:inline-flex;align-items:center;font:600 .74rem var(--body);padding:3px 10px;border-radius:999px;background:var(--soft);color:var(--ink);margin:0 6px 6px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 .92rem var(--body);padding:12px 20px;border-radius:10px;border:1px solid transparent;background:var(--sunset);color:var(--on-accent);cursor:pointer;transition:transform .12s,filter .15s,background .15s}
+.btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.btn:active{transform:none}
+.btn.ghost{background:var(--surface);color:var(--ink);border-color:var(--line-strong)}
+.btn.ghost:hover{background:var(--soft);filter:none}
+.btn.quiet{background:transparent;color:var(--muted);border-color:transparent;padding-inline:10px}
+.btn.quiet:hover{color:var(--ink);background:var(--soft);filter:none}
+.btn:disabled{opacity:.4;cursor:default;transform:none}
+.btn svg{width:16px;height:16px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.spread{justify-content:space-between}
+select{font:600 .9rem var(--body);padding:10px 36px 10px 14px;border-radius:10px;border:1px solid var(--line-strong);background:var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat right 14px center;color:var(--ink);appearance:none;cursor:pointer}
+.seg{display:inline-flex;padding:4px;border-radius:12px;background:var(--soft);gap:2px}
+.seg button{font:600 .85rem var(--body);border:0;background:transparent;color:var(--muted);padding:7px 14px;border-radius:9px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+
+/* ---------- chapters ---------- */
+.chapter-rail{overflow-x:auto;margin-inline:-4px;padding:4px}
+.chapter-rail .track{display:grid;grid-template-columns:repeat(6,minmax(150px,1fr));gap:10px}
+.chcard{position:relative;text-align:left;display:grid;gap:4px;align-content:start;padding:14px 14px 16px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;transition:transform .15s,border-color .15s,box-shadow .15s}
+.chcard:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:var(--line-strong)}
+.chcard .num{font:600 .7rem var(--mono);letter-spacing:.12em;color:var(--sunset)}
+.chcard .t{font-family:var(--display);font-size:1.18rem;font-weight:800;line-height:1.05}
+.chcard .when{font-size:.78rem;color:var(--muted)}
+.chcard .check{position:absolute;top:12px;right:12px;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:var(--goodbg);color:var(--good)}
+.chcard .check svg{width:12px;height:12px}
+.chcard[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--surface);box-shadow:var(--shadow-lg)}
+.chcard[aria-pressed="true"] .when{color:color-mix(in srgb,var(--surface) 70%,transparent)}
+.chcard[aria-pressed="true"] .num{color:var(--gold)}
+
+.ch-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:end}
+.bignum{font-family:var(--display);font-weight:900;font-size:clamp(5rem,14vw,8rem);line-height:.8;color:transparent;-webkit-text-stroke:2px var(--sunset);font-variant-numeric:tabular-nums}
+.ch-head .stack{gap:8px;padding-bottom:6px}
+.ch-head .setting{color:var(--muted);display:flex;gap:8px;align-items:flex-start;font-size:.96rem}
+.ch-head .setting svg{flex:none;width:16px;height:16px;margin-top:4px;color:var(--rose)}
+@media (max-width:560px){.ch-head{grid-template-columns:1fr;gap:6px}.bignum{font-size:4.6rem}}
+
+.ch-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:20px}
+@media (max-width:820px){.ch-grid{grid-template-columns:1fr}}
+.summary p{font-size:1.04rem;line-height:1.7}
+.why{border-radius:var(--r-sm);background:var(--tint);padding:16px 18px;display:grid;gap:6px}
+.why .label{color:var(--sunset)}
+
+.timeline{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:ev}
+.timeline li{position:relative;padding:0 0 18px 34px;counter-increment:ev}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:counter(ev);position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:50%;background:var(--soft);color:var(--dusk);font:600 .7rem/22px var(--mono);text-align:center}
+.timeline li::after{content:"";position:absolute;left:10.5px;top:26px;bottom:4px;width:1px;background:var(--line-strong)}
+.timeline li:last-child::after{display:none}
+
+.qs{display:grid;gap:10px}
+details.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;transition:border-color .15s,box-shadow .15s}
+details.q:hover{border-color:var(--line-strong)}
+details.q[open]{box-shadow:var(--shadow);border-color:var(--line-strong)}
+details.q summary{cursor:pointer;padding:15px 18px;font-weight:600;list-style:none;display:flex;gap:14px;align-items:flex-start}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary .plus{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--soft);color:var(--sunset);margin-top:1px;transition:transform .2s}
+details.q summary .plus svg{width:12px;height:12px}
+details.q[open] summary .plus{transform:rotate(45deg)}
+details.q .a{padding:0 18px 16px 54px;color:var(--ink);line-height:1.65}
+details.q .a::before{content:"Answer";display:block;font:600 .66rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--good);margin-bottom:2px}
+
+.ch-foot{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;padding-top:8px;border-top:1px solid var(--line);padding-block:20px 0}
+.ch-foot .next{justify-self:end}
+.ch-foot .prev{justify-self:start}
+.markdone{border:1px solid var(--good);background:transparent;color:var(--good)}
+.markdone:hover{background:var(--goodbg);filter:none}
+.markdone.on{background:var(--good);color:var(--on-accent)}
+@media (max-width:560px){.ch-foot{grid-template-columns:1fr 1fr}.ch-foot .markdone{grid-column:1/-1;order:-1}}
+
+/* ---------- characters ---------- */
+.split{display:grid;grid-template-columns:minmax(0,290px) minmax(0,1fr);gap:22px;align-items:start}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+.roster-wrap{display:grid;gap:12px;position:sticky;top:80px}
+@media (max-width:760px){.roster-wrap{position:static}}
+.roster{display:grid;gap:4px}
+@media (max-width:760px){.roster{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
+.roster button{display:flex;align-items:center;gap:12px;text-align:left;font:600 .93rem var(--body);padding:8px 10px;border-radius:10px;border:1px solid transparent;background:transparent;color:var(--ink);cursor:pointer;transition:background .15s}
+.roster button:hover{background:var(--surface)}
+.roster button[aria-pressed="true"]{background:var(--surface);border-color:var(--line);box-shadow:var(--shadow)}
+.roster button .sm{font:500 .72rem var(--body);color:var(--muted);display:block}
+.av{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font:800 1rem var(--display);letter-spacing:.02em;background:var(--soft);border:2px solid var(--c,var(--muted));color:var(--c,var(--muted))}
+.av.lg{width:76px;height:76px;font-size:1.9rem;border-width:3px}
+.av.g{--c:var(--sunset)} .av.s{--c:var(--dusk)} .av.o{--c:var(--muted)}
+.pill{display:inline-flex;align-items:center;gap:6px;font:600 .68rem var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--soft)}
+.pill.g{color:var(--sunset)} .pill.s{color:var(--dusk)} .pill.o{color:var(--muted)}
+.profile{gap:20px}
+.p-head{display:flex;gap:18px;align-items:center}
+.p-head h2{font-size:clamp(1.9rem,4.5vw,2.5rem)}
+.p-desc{font-size:1.04rem;line-height:1.7;max-width:62ch}
+.values{display:flex;flex-wrap:wrap;gap:8px}
+.values span{font:600 .85rem var(--body);padding:6px 12px;border-radius:8px;background:var(--tint);color:var(--ink)}
+.rels{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.rels button{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;text-align:left;font:inherit;padding:14px;border-radius:12px;border:1px solid var(--line);background:var(--raised);color:var(--ink);cursor:pointer;transition:transform .15s,border-color .15s,box-shadow .15s}
+.rels button:hover{transform:translateY(-2px);border-color:var(--line-strong);box-shadow:var(--shadow)}
+.rels .av{width:34px;height:34px;font-size:.9rem}
+.rels b{font-weight:700;display:block}
+.rels .kind{font:600 .66rem var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--rose)}
+.rels p{color:var(--muted);font-size:.88rem;line-height:1.5;margin-top:4px}
+
+/* ---------- map ---------- */
+.mapcard{padding:10px}
+.mapbox{overflow-x:auto}
+.mapbox svg{display:block;width:100%;min-width:680px;height:auto}
+.mapbox text{font-family:var(--body);fill:var(--ink)}
+.mapbox line{transition:opacity .2s}
+.mapbox .node{cursor:pointer}
+.mapbox .node circle.ring{transition:r .15s}
+.mapbox .node:hover circle.ring,.mapbox .node:focus circle.ring{r:32}
+.mapbox svg.focus line:not(.hot){opacity:.12}
+.mapbox svg.focus .node:not(.hot){opacity:.35}
+.legend{display:flex;flex-wrap:wrap;gap:18px;font-size:.86rem;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend svg{width:30px;height:8px}
+.map-hint{font-size:.86rem;color:var(--muted);padding:6px 14px 10px}
+
+/* ---------- themes ---------- */
+.theme-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.theme-card h3{font-size:1.55rem}
+.evlist{display:grid;gap:0;margin-top:4px}
+.ev{display:grid;grid-template-columns:62px minmax(0,1fr);gap:12px;padding-block:10px;border-top:1px solid var(--line);font-size:.93rem;line-height:1.5}
+.ev b{font:600 .7rem/1.9 var(--mono);letter-spacing:.06em;color:var(--sunset);white-space:nowrap}
+.sym-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.sym{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;gap:8px}
+.sym h3{font-size:1.2rem;color:var(--dusk)}
+.sym p{font-size:.92rem;color:var(--muted);line-height:1.55}
+.subhead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.subhead::after{content:"";flex:1;height:1px;background:var(--line);min-width:40px}
+
+/* ---------- quiz ---------- */
+.quiz-shell{max-width:760px;width:100%;display:grid;gap:18px}
+.qprog{display:flex;gap:4px}
+.qprog i{flex:1;height:6px;border-radius:3px;background:var(--line)}
+.qprog i.r{background:var(--good)} .qprog i.w{background:var(--bad)} .qprog i.c{background:var(--ink)}
+.qcard{padding:28px}
+@media (max-width:480px){.qcard{padding:20px}}
+.qcard .prompt{font-family:var(--display);font-size:clamp(1.6rem,4vw,2rem);font-weight:800;line-height:1.1}
+.opts{display:grid;gap:10px}
+.opts button{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;text-align:left;font:500 1rem var(--body);padding:13px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--raised);color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s,transform .12s}
+.opts button:not(:disabled):hover{border-color:var(--ink);transform:translateX(2px)}
+.opts button .k{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--soft);font:600 .8rem var(--mono);color:var(--muted)}
+.opts button .mk{width:20px;height:20px}
+.opts button:disabled{cursor:default}
+.opts button.right{border-color:var(--good);background:var(--goodbg)}
+.opts button.right .k{background:var(--good);color:var(--on-accent)}
+.opts button.wrong{border-color:var(--bad);background:var(--badbg)}
+.opts button.wrong .k{background:var(--bad);color:var(--on-accent)}
+.opts button.dim{opacity:.5}
+.explain{padding:14px 16px;border-radius:12px;background:var(--soft);line-height:1.6}
+.explain b{margin-right:4px}
+.kbd{font:600 .7rem var(--mono);padding:2px 6px;border-radius:5px;border:1px solid var(--line-strong);color:var(--muted)}
+.result{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:center}
+@media (max-width:520px){.result{grid-template-columns:1fr}}
+.ring{width:132px;height:132px}
+.ring text{font-family:var(--display);font-weight:900;fill:var(--ink)}
+.missed{display:grid;gap:10px}
+.missed div{padding:12px 14px;border-radius:10px;background:var(--raised);border:1px solid var(--line);font-size:.93rem;display:grid;gap:4px}
+.missed .ans{color:var(--good);font-weight:600}
+
+/* ---------- flashcards ---------- */
+.fc-shell{max-width:680px;width:100%;display:grid;gap:18px}
+.flash{position:relative;perspective:1400px;cursor:pointer;outline-offset:6px}
+.flash::before,.flash::after{content:"";position:absolute;left:14px;right:14px;height:100%;border-radius:18px;background:var(--surface);border:1px solid var(--line)}
+.flash::before{top:12px;left:28px;right:28px;opacity:.5}
+.flash::after{top:6px;opacity:.8}
+.flash-inner{position:relative;z-index:1;min-height:280px;transition:transform .55s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d}
+.flash.flipped .flash-inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:28px 30px;display:grid;grid-template-rows:auto 1fr auto;gap:10px;border:1px solid var(--line);box-shadow:var(--shadow-lg)}
+.front{background:var(--surface)}
+.front .term{align-self:center;font-family:var(--display);font-size:clamp(2.2rem,7vw,3.2rem);font-weight:900;line-height:1}
+.back{background:linear-gradient(160deg,#252b58,#4a2c5c);color:#f6f0ff;transform:rotateY(180deg)}
+.back .label{color:#d9c9ff}
+.back .def{align-self:center;font-size:1.12rem;line-height:1.6}
+.fc-meta{display:flex;justify-content:space-between;align-items:center}
+.fc-hint{font-size:.8rem;color:var(--faint);display:flex;gap:8px;align-items:center}
+.back .fc-hint{color:#cbbfe8}
+.fc-bar{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.fc-bar i{display:block;height:100%;background:var(--good);width:0;transition:width .3s}
+.fc-controls{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center}
+.fc-controls .mid{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+
+/* ---------- essay ---------- */
+.prompt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.prompt-card{gap:12px}
+.prompt-card .pq{font-family:var(--display);font-size:1.35rem;font-weight:800;line-height:1.1}
+.prompt-card details.q{background:var(--raised)}
+.prompt-card details.q summary{padding:11px 14px;font-size:.92rem}
+.prompt-card details.q .a{padding:0 14px 14px 50px;font-size:.93rem}
+.prompt-card details.q .a::before{display:none}
+.builder-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:start}
+@media (max-width:860px){.builder-grid{grid-template-columns:1fr}}
+.field{display:grid;gap:6px}
+.field label{display:flex;gap:10px;align-items:baseline;font-weight:700;font-size:.95rem}
+.field label .n{font:600 .7rem var(--mono);color:var(--sunset)}
+.field .help{font-size:.84rem;color:var(--muted)}
+textarea,input[type=text]{width:100%;font:inherit;font-size:.97rem;padding:11px 13px;border-radius:10px;border:1px solid var(--line-strong);background:var(--raised);color:var(--ink);transition:border-color .15s,box-shadow .15s}
+textarea:focus,input[type=text]:focus{outline:none;border-color:var(--sunset);box-shadow:0 0 0 3px color-mix(in srgb,var(--sunset) 22%,transparent)}
+textarea{min-height:84px;resize:vertical;line-height:1.55}
+.preview{position:sticky;top:80px;gap:14px}
+@media (max-width:860px){.preview{position:static}}
+.out{background:var(--raised);border:1px dashed var(--line-strong);border-radius:12px;padding:18px;white-space:pre-wrap;min-height:180px;line-height:1.7;font-size:.98rem}
+.out.empty{color:var(--faint);display:grid;place-items:center;text-align:center;white-space:normal}
+.out .lbl{font:600 .66rem var(--mono);letter-spacing:.12em;color:var(--sunset);display:block;margin-top:10px}
+.out .lbl:first-child{margin-top:0}
+.checklist{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.checklist li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;cursor:pointer;padding:10px 12px;border-radius:10px;transition:background .15s}
+.checklist li:hover{background:var(--soft)}
+.checklist .box{width:22px;height:22px;border-radius:6px;border:2px solid var(--line-strong);display:grid;place-items:center;margin-top:1px;transition:background .15s,border-color .15s}
+.checklist .box svg{width:13px;height:13px;opacity:0;color:var(--on-accent)}
+.checklist li.on .box{background:var(--good);border-color:var(--good)}
+.checklist li.on .box svg{opacity:1}
+.checklist li.on span{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--faint)}
+
+/* ---------- toast & footer ---------- */
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--ink);color:var(--surface);font:600 .9rem var(--body);padding:11px 18px;border-radius:999px;box-shadow:var(--shadow-lg);transition:opacity .2s,transform .2s;z-index:50;display:flex;gap:8px;align-items:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast svg{width:16px;height:16px;color:var(--good)}
+footer{color:var(--faint);font-size:.84rem;padding-block:0 48px;border-top:1px solid var(--line)}
+footer .wrap{padding-top:22px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="stars" aria-hidden="true"></div>
+  <div class="sun" aria-hidden="true"></div>
+  <svg class="skyline" viewBox="0 0 1200 86" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="#15112a" d="M0 86V60h40l22-16 22 16h26V52h54v34h8V58l30-20 30 20v28h12V64h60l18-12 18 12h22V48h14V20l6-12 6 12v28h14v38h10V56l34-24 34 24v30h18V62h70v24h8V54l26-18 26 18v32h16V66h44l20-14 20 14h30V58h62v28h10V60l28-20 28 20v26h20V64h56l24-16 24 16h24V56h40v30h12V62l30-20 30 20v24z"/>
+    <rect x="0" y="84" width="1200" height="2" fill="#15112a"/>
+  </svg>
+  <div class="wrap hero-inner">
+    <div class="eyebrow">S.E. Hinton · 1967 · Language Arts</div>
+    <h1>The Outsiders<span>Chapters 1–6 Study Guide</span></h1>
+    <p class="sub">Everything you need for the short essay: what happens in each chapter, how the characters connect, what they value, and how to build a strong argument.</p>
+    <div class="hero-progress">
+      <div class="segs" id="segs" aria-label="Chapters reviewed"></div>
+      <span class="ptext" id="progLabel"></span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Study guide sections">
+  <div class="wrap"><div class="tablist" role="tablist" id="tablist"></div></div>
+</nav>
+
+<main class="wrap">
+
+  <section class="panel" id="chapters">
+    <div class="chapter-rail"><div class="track" id="rail"></div></div>
+    <div id="chapterBody" class="stack" style="gap:26px"></div>
+  </section>
+
+  <section class="panel" id="characters" hidden>
+    <div class="panel-head">
+      <span class="label">12 characters</span>
+      <h2>Who's who</h2>
+      <p class="lede">Pick a character to see their traits, what they value, and how they connect to everyone else. Click a relationship to jump to that person.</p>
+    </div>
+    <div class="split">
+      <div class="roster-wrap">
+        <div class="seg" id="rosterFilter" role="group" aria-label="Filter characters">
+          <button aria-pressed="true" data-f="all">All</button>
+          <button aria-pressed="false" data-f="g">Greasers</button>
+          <button aria-pressed="false" data-f="s">Socs &amp; others</button>
+        </div>
+        <div class="roster" id="roster"></div>
+      </div>
+      <div class="card profile" id="profile"></div>
+    </div>
+  </section>
+
+  <section class="panel" id="map" hidden>
+    <div class="panel-head">
+      <span class="label">By the end of Chapter 6</span>
+      <h2>Relationship map</h2>
+      <p class="lede">Hover a name to highlight its connections. Click it to open that character's profile.</p>
+    </div>
+    <div class="legend" id="legend"></div>
+    <div class="card mapcard"><div class="mapbox" id="mapbox"></div><p class="map-hint">Greasers sit on the left (East Side), Socs on the right (West Side). Scroll sideways on a small screen.</p></div>
+  </section>
+
+  <section class="panel" id="themes" hidden>
+    <div class="panel-head">
+      <span class="label">Big ideas</span>
+      <h2>Themes &amp; values</h2>
+      <p class="lede">Each theme lists evidence by chapter. These are the ideas short-essay prompts ask about most.</p>
+    </div>
+    <div class="theme-grid" id="themeGrid"></div>
+    <div class="subhead"><h2 style="font-size:1.9rem">Symbols</h2></div>
+    <div class="sym-grid" id="symbolGrid"></div>
+  </section>
+
+  <section class="panel" id="quiz" hidden>
+    <div class="row spread" style="align-items:end">
+      <div class="panel-head">
+        <span class="label">24 questions</span>
+        <h2>Test yourself</h2>
+        <p class="lede">Multiple choice with an explanation after every answer. Use keys <span class="kbd">1</span>–<span class="kbd">4</span> to answer and <span class="kbd">Enter</span> to continue.</p>
+      </div>
+      <div class="row">
+        <label class="label" for="quizFilter">Chapter</label>
+        <select id="quizFilter">
+          <option value="all">All chapters</option>
+          <option value="1">Chapter 1</option><option value="2">Chapter 2</option><option value="3">Chapter 3</option>
+          <option value="4">Chapter 4</option><option value="5">Chapter 5</option><option value="6">Chapter 6</option>
+        </select>
+      </div>
+    </div>
+    <div class="quiz-shell" id="quizShell"></div>
+  </section>
+
+  <section class="panel" id="cards" hidden>
+    <div class="row spread" style="align-items:end">
+      <div class="panel-head">
+        <span class="label">Memorize</span>
+        <h2>Flashcards</h2>
+        <p class="lede">Tap the card or press <span class="kbd">Space</span> to flip. Use <span class="kbd">←</span> <span class="kbd">→</span> to move. Cards you mark as known drop out of the deck.</p>
+      </div>
+      <div class="row">
+        <label class="label" for="deckSel">Deck</label>
+        <select id="deckSel">
+          <option value="all">Everything</option>
+          <option value="people">Characters</option>
+          <option value="terms">Terms &amp; symbols</option>
+          <option value="events">Key events</option>
+        </select>
+      </div>
+    </div>
+    <div class="fc-shell">
+      <div class="stack" style="gap:8px">
+        <div class="fc-meta"><span class="label" id="deckCount"></span><span class="label" id="knownCount"></span></div>
+        <div class="fc-bar"><i id="fcBar"></i></div>
+      </div>
+      <div class="flash" id="flash" tabindex="0" role="button" aria-label="Flip card">
+        <div class="flash-inner">
+          <div class="face front"><span class="label" id="fcKind"></span><div class="term" id="fcFront"></div><span class="fc-hint">Tap to reveal</span></div>
+          <div class="face back"><span class="label" id="fcKind2"></span><div class="def" id="fcBack"></div><span class="fc-hint">Tap to flip back</span></div>
+        </div>
+      </div>
+      <div class="fc-controls">
+        <button class="btn ghost" id="fcPrev" aria-label="Previous card"></button>
+        <div class="mid">
+          <button class="btn ghost" id="fcAgain">Still learning</button>
+          <button class="btn" id="fcKnow">I know this</button>
+        </div>
+        <button class="btn ghost" id="fcNext" aria-label="Next card"></button>
+      </div>
+      <div class="row" style="justify-content:center"><button class="btn quiet" id="fcShuffle">Shuffle</button><button class="btn quiet" id="fcReset">Reset deck</button></div>
+    </div>
+  </section>
+
+  <section class="panel" id="essay" hidden>
+    <div class="panel-head">
+      <span class="label">Short essay</span>
+      <h2>Essay help</h2>
+      <p class="lede">Start with a practice prompt, then use the builder to shape your paragraph. Your draft is saved in this browser.</p>
+    </div>
+    <div class="subhead"><h3>Practice prompts</h3></div>
+    <div class="prompt-grid" id="prompts"></div>
+
+    <div class="subhead"><h3>Paragraph builder</h3></div>
+    <div class="builder-grid">
+      <div class="card" style="gap:18px">
+        <div class="row"><button class="btn ghost" id="fillExample">Load an example</button><button class="btn quiet" id="clearBuilder">Clear all</button></div>
+        <div class="field"><label for="b1"><span class="n">01</span>Claim</label><span class="help">What you're arguing, in one sentence.</span><input type="text" id="b1" placeholder="Johnny is the most loyal member of the gang."></div>
+        <div class="field"><label for="b2"><span class="n">02</span>Evidence</label><span class="help">A specific moment. Name the chapter.</span><textarea id="b2" placeholder="In Chapter 4, when Bob holds Ponyboy under the fountain…"></textarea></div>
+        <div class="field"><label for="b3"><span class="n">03</span>Analysis</label><span class="help">Why this moment proves your claim.</span><textarea id="b3" placeholder="This shows that…"></textarea></div>
+        <div class="field"><label for="b4"><span class="n">04</span>More evidence <span class="help" style="font-weight:400">(optional)</span></label><textarea id="b4"></textarea></div>
+        <div class="field"><label for="b5"><span class="n">05</span>Concluding sentence</label><span class="help">Tie it back to a bigger theme.</span><input type="text" id="b5"></div>
+      </div>
+      <div class="card preview">
+        <div class="row spread">
+          <div class="seg" id="viewSeg" role="group" aria-label="Preview style">
+            <button aria-pressed="true" data-v="para">Paragraph</button>
+            <button aria-pressed="false" data-v="outline">Outline</button>
+          </div>
+          <span class="label" id="wordCount">0 words</span>
+        </div>
+        <div class="out empty" id="builderOut">Your paragraph appears here as you type.</div>
+        <button class="btn" id="copyOut">Copy text</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="row spread"><h3>Before you turn it in</h3><span class="label" id="checkCount"></span></div>
+      <ul class="checklist" id="checklist"></ul>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Study guide for Chapters 1–6 of <em>The Outsiders</em> by S.E. Hinton. Your progress is saved in this browser only. Check details against your own copy of the book.</div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ---------------- DATA ---------------- */
+const CHAPTERS=[
+{n:1,title:"Jumped on the Way Home",setting:"A weekday evening, the East Side of town. Ponyboy walks home alone from a movie.",
+summary:"Ponyboy Curtis, fourteen, narrates. Walking home from a movie, he's jumped by a group of Socs in a red Corvair who hold a knife to his throat and threaten to cut his hair. His brothers and the gang arrive and chase them off. Through Ponyboy's descriptions we meet the whole gang and learn his parents died in a car wreck, so his oldest brother Darry is raising him and Soda.",
+events:["Ponyboy walks home alone after a Paul Newman movie, knowing greasers shouldn't walk alone.","Socs in a red Corvair corner him; one holds a blade to his throat and they threaten to cut his long hair.","Darry, Soda, Steve, Two-Bit, Dally and Johnny chase the Socs off. Darry scolds Pony for not thinking.","Pony introduces each gang member and explains greasers vs. Socs.","We learn Johnny was brutally beaten by Socs months earlier and now carries a switchblade.","Dally, Johnny and Pony make plans to go to the Nightly Double drive-in the next night."],
+why:"Sets up the central conflict (greasers vs. Socs), the Curtis family tension, and Ponyboy as a thoughtful narrator who doesn't fit the tough greaser stereotype.",
+tags:["Class conflict","Family","Identity"],
+qs:[["Why does Ponyboy feel Darry doesn't love him?","Darry is strict, yells at him, and criticizes him (for walking alone, for not using his head). Pony compares him to Soda, who is gentle and understanding. Pony reads Darry's worry as dislike."],
+["How are greasers and Socs different?","Greasers are poor East Side kids with long, greased hair who get labeled as hoods. Socs (Socials) are rich West Side kids with cars and madras shirts who jump greasers for fun and rarely face consequences."],
+["Why did Darry give up college?","After their parents died, Darry, 20, gave up a football scholarship and works two jobs so the three brothers can stay together instead of Pony and Soda going to a boys' home."],
+["What happened to Johnny before the novel begins?","Four Socs in a blue Mustang beat him badly; one wore rings that cut his face. Since then he's jumpy and carries a switchblade."]]},
+
+{n:2,title:"The Nightly Double",setting:"The next night at the Nightly Double drive-in movie theater.",
+summary:"Dally, Johnny and Ponyboy sneak into the drive-in. Dally harasses two Soc girls, Cherry Valance and Marcia, until Cherry throws her Coke in his face. Quiet Johnny surprises everyone by telling Dally to leave her alone, and Dally walks off. Pony and Cherry begin talking and discover they have more in common than expected. Pony tells her the story of Johnny's beating.",
+events:["The three sneak into the drive-in; Dally makes crude comments to Cherry and Marcia.","Cherry throws a Coke at Dally. Johnny, who idolizes Dally, tells him to leave her alone.","Dally leaves. Two-Bit arrives and sits with the group.","Cherry and Pony connect; she says he isn't like the other greasers.","Pony tells Cherry about Johnny's beating by Socs in a blue Mustang.","Cherry tells Pony that things are hard for Socs too, just in a different way."],
+why:"Introduces Cherry, a Soc who sees greasers as people. Cracks begin to appear in the idea that the two groups are completely different.",
+tags:["Stereotypes","Empathy","Courage"],
+qs:[["Why is it surprising that Johnny stands up to Dally?","Johnny is the gang's timid 'pet' and worships Dally. Speaking up to him takes real courage and shows Johnny's sense of right and wrong."],
+["What does Cherry mean when she says things are rough all over?","Socs have money but still have problems. Pony later learns Socs struggle with emptiness and pressure, not poverty and violence."],
+["How does Cherry treat Ponyboy differently from other greasers?","She talks to him as an equal, notices he's smart and sensitive, and is honest with him, instead of seeing only a greaser."]]},
+
+{n:3,title:"Sunsets and a Runaway",setting:"The same night, walking the girls home, then the vacant lot and the Curtis house at 2 a.m.",
+summary:"Walking the girls to Two-Bit's house for a ride, Pony and Cherry talk honestly. Cherry explains Socs are 'sophisticated' and cool to the point of not feeling anything. They discover they both watch sunsets. Bob and Randy, the girls' Soc boyfriends, pull up in a blue Mustang; Cherry leaves with them to prevent a fight. Pony and Johnny fall asleep in the vacant lot. When Pony gets home at 2 a.m., Darry yells and slaps him. Pony runs out and grabs Johnny.",
+events:["Cherry explains the difference between the groups: Socs hide their feelings; greasers feel too much.","Pony and Cherry realize they both watch sunsets. Pony's thought: they see the same sunset.","Bob and Randy arrive in a blue Mustang. Johnny recognizes the car and Bob's rings from his beating.","Cherry leaves with the Socs to stop a fight and says she may not say hi at school — nothing personal.","Pony and Johnny fall asleep in the lot. Pony gets home at 2 a.m.","Darry yells and slaps Pony. Shocked, Pony runs away, and Johnny goes with him."],
+why:"The sunset becomes the key symbol that people on both sides share the same world. Darry's slap is the spark that leads to the killing in Chapter 4.",
+tags:["Sunsets","Family conflict","Feelings"],
+qs:[["What is the significance of the sunset conversation?","It shows that Socs and greasers share the same experiences and feelings. Class divides them, but they're under the same sky."],
+["Why does Johnny freak out when he sees the blue Mustang?","It's the same car the Socs drove when they beat him. Bob's rings are the ones that cut his face."],
+["Why does Ponyboy run away?","Darry slaps him for coming home so late. Nobody in the family had ever hit him, and it confirms Pony's belief that Darry doesn't want him."],
+["How does Johnny feel about his own home?","He says he doesn't care if he goes home. His parents neglect and abuse him, and the gang is his real family."]]},
+
+{n:4,title:"The Fountain",setting:"The park, around 2:30 a.m., then Dally's place at Buck Merril's and a freight train.",
+summary:"Pony and Johnny walk to the park to cool off. The blue Mustang circles and five drunk Socs, including Bob and Randy, confront them over the girls. Bob pushes Ponyboy's head into the fountain to drown him. Johnny stabs and kills Bob. The boys go to Dally for help. Dally gives them money and a loaded gun and sends them on a freight train to hide in an abandoned church in Windrixville.",
+events:["The Socs taunt Pony and Johnny for 'picking up' their girls.","Bob and the others dunk Ponyboy in the fountain and hold him under.","Johnny stabs Bob to save Pony. Bob dies; the other Socs flee.","Johnny, shaking but calm, says they need to find Dally.","Dally gives them $50 and a loaded gun and tells them to hop the 3:15 freight train to Windrixville and hide in the church on Jay Mountain.","On the train, Pony wakes and they jump off, then walk to the church."],
+why:"The turning point. The fight stops being a gang-war game and becomes a real death. Johnny, the gang's most scared member, acts to protect his friend.",
+tags:["Violence","Loyalty","Turning point"],
+qs:[["Why does Johnny kill Bob?","Bob and the Socs are drowning Ponyboy. Johnny acts out of loyalty and fear, and because he swore he'd never be beaten like that again."],
+["How does Dally help the boys?","Even though he's hard and cynical, he immediately helps: money, a gun, dry clothes for Pony, and a plan to hide. It shows his loyalty to Johnny."],
+["How does this event change Johnny?","Johnny, once the most frightened, becomes calm and decisive after the killing. Pony is the one who panics."]]},
+
+{n:5,title:"The Church on Jay Mountain",setting:"An abandoned church in Windrixville, about five days.",
+summary:"To avoid being recognized, Johnny cuts Pony's hair and bleaches it, and cuts his own. Pony is upset because his hair is part of his identity as a greaser. They pass the days reading Gone with the Wind and playing poker. At dawn Pony recites Robert Frost's poem 'Nothing Gold Can Stay.' Dally shows up with a letter from Soda and news: Cherry is spying for the greasers, and a rumble is planned.",
+events:["Johnny buys supplies: a week's baloney, bread, matches, peroxide, playing cards, and Gone with the Wind.","Johnny cuts Pony's hair and bleaches it; Pony feels he's lost part of himself.","Johnny admires the Southern gentlemen in the novel and compares them to Dally.","Watching sunrise, Pony recites 'Nothing Gold Can Stay.' Johnny is moved by it.","Dally arrives with Soda's letter, takes them to Dairy Queen, and shares news.","Cherry is a spy for the greasers; the police think the boys went to Texas; a rumble is set."],
+why:"A quiet chapter about innocence and identity. The poem's idea that beautiful, golden things don't last becomes a central theme of the novel.",
+tags:["Innocence","Identity","Nothing gold"],
+qs:[["Why is losing his hair so hard for Ponyboy?","Long greased hair is the greasers' trademark and the one thing they have pride in. Cutting it feels like losing his identity."],
+["What does 'Nothing Gold Can Stay' mean for the boys?","Golden things (youth, innocence, beauty like a sunrise) don't last. Pony and Johnny are losing their innocence."],
+["What does Johnny admire in Gone with the Wind?","The Southern gentlemen who charge into battle bravely. He connects them to Dally's courage."],
+["Why does Cherry spy for the greasers?","She feels the fighting caused Bob's death and wants to help stop it — another Soc crossing the line."]]},
+
+{n:6,title:"Fire at the Church",setting:"Windrixville, the burning church, then a hospital back home.",
+summary:"Johnny decides to go back and turn himself in, saying he has his whole life ahead of him. Dally is upset because he fears jail will make Johnny hard. When they return to the church, it's on fire and schoolchildren from a picnic are trapped inside. Pony and Johnny rush in and save them. Johnny is hit by a falling timber; Dally pulls him out. At the hospital, Darry breaks down crying, and Pony finally sees that Darry loves him. Johnny's condition is critical.",
+events:["Johnny says he'll turn himself in; he hopes his parents asked about him (they didn't).","Dally argues, fearing jail will make Johnny hard like him.","The church is burning and children are trapped inside; Pony and Johnny climb in to save them.","Johnny pushes Pony out as the roof collapses and is hit by a burning beam.","Dally hits Pony to put out the fire on his back, then pulls Johnny out.","At the hospital, Darry cries. Pony realizes Darry was scared, not angry. Johnny's back is broken and he is badly burned."],
+why:"Greasers become heroes, flipping the stereotype. Ponyboy's relationship with Darry is finally repaired.",
+tags:["Heroism","Family","Redemption"],
+qs:[["Why does Johnny decide to turn himself in?","He says he has his whole life ahead of him and doesn't want to hide forever. He also hopes his parents miss him."],
+["Why is Dally upset about Johnny turning himself in?","Dally went to jail young and it made him hard. He doesn't want the same thing for Johnny."],
+["How do the greasers become heroes?","They risk their lives to save children from the fire. Jerry Wood, a teacher, is amazed they're greasers. This flips how others see them."],
+["What does Ponyboy realize about Darry at the hospital?","Darry cries, and Pony understands his strictness came from fear of losing him. Darry loves him."]]}
+];
+
+const PEOPLE={
+pony:{name:"Ponyboy Curtis",side:"g",sideLabel:"Greaser",facts:["14","Narrator","Youngest Curtis"],
+desc:"The narrator. Smart, good in school, loves movies, books and sunsets. Feels different from other greasers and struggles with Darry. He's still innocent and sees people as individuals.",
+values:["Family","Honesty","Beauty (sunsets, poetry)","Understanding others"],
+rels:[["darry","Brother","Oldest brother and guardian. Pony thinks Darry dislikes him until the hospital scene in Ch. 6."],["soda","Brother","His favorite brother; Soda understands him and plays peacemaker."],["johnny","Best friend","They run away together. Johnny saves Pony's life by killing Bob."],["cherry","Unexpected friend","A Soc who talks with him honestly; they share sunsets."],["dally","Gang","Pony fears him a little but learns he's loyal. Dally saves him in the fire."],["bob","Enemy","Bob tries to drown him in the fountain."]]},
+darry:{name:"Darry Curtis",side:"g",sideLabel:"Greaser",facts:["20","Oldest brother","Works two jobs"],
+desc:"Tough, responsible and strict. Gave up a football scholarship to keep the family together. Seems cold, but his harshness comes from fear of losing his brothers.",
+values:["Responsibility","Family staying together","Hard work"],
+rels:[["pony","Brother / guardian","Pushes Pony hard because he believes in him. The slap in Ch. 3 starts everything."],["soda","Brother","Close; Soda is the middle ground between Darry and Pony."]]},
+soda:{name:"Sodapop Curtis",side:"g",sideLabel:"Greaser",facts:["16","Middle brother","Dropped out; works at the DX station"],
+desc:"Handsome, happy-go-lucky, loved by everyone. Dropped out of school and works at a gas station. Understands people's feelings and keeps the brothers connected.",
+values:["Fun","Family","Kindness"],
+rels:[["pony","Brother","Pony's closest confidant. Writes Pony the letter in Ch. 5."],["darry","Brother","Tries to keep peace between Darry and Pony."],["steve","Best friend","Steve and Soda work together at the gas station."]]},
+johnny:{name:"Johnny Cade",side:"g",sideLabel:"Greaser",facts:["16","Gang's 'pet'","Abused at home"],
+desc:"Quiet, nervous, and neglected by his abusive parents. Traumatized by his beating by the Socs. The gang is his real family. Grows brave: stands up to Dally, kills Bob to save Pony, and saves children from the fire.",
+values:["Loyalty","Courage","Belonging"],
+rels:[["pony","Best friend","Kills Bob to save him; hides with him in the church."],["dally","Hero-worship","Johnny idolizes Dally. Dally cares about Johnny more than anyone."],["bob","Victim / killer","Bob's gang beat Johnny before the novel; Johnny kills Bob in Ch. 4."]]},
+dally:{name:"Dallas 'Dally' Winston",side:"g",sideLabel:"Greaser",facts:["17","From New York","Jail record since age 10"],
+desc:"The toughest and most dangerous greaser. Cold, rule-breaking and cynical. But he's fiercely loyal: he helps Johnny and Pony escape, and his soft spot is Johnny.",
+values:["Toughness","Loyalty to the gang","Survival"],
+rels:[["johnny","Protector","The one person Dally truly cares about. Fears jail will harden him."],["cherry","Conflict / attraction","Harasses her at the drive-in; she throws a Coke at him but says she could fall for him."],["pony","Gang","Gives him money and a plan; saves him from the fire."]]},
+twobit:{name:"Keith 'Two-Bit' Mathews",side:"g",sideLabel:"Greaser",facts:["18½","Oldest gang member","Joker; shoplifts for fun"],
+desc:"The wisecracker. Always joking, carries a black-handled switchblade, and gets along with Marcia. Keeps the gang's mood light.",
+values:["Humor","Fun","Loyalty"],
+rels:[["marcia","Friendly","They get along at the drive-in."],["pony","Gang","Watches out for Pony."]]},
+steve:{name:"Steve Randle",side:"g",sideLabel:"Greaser",facts:["17","Car expert","Soda's best friend"],
+desc:"Cocky and smart about cars. Soda's best friend since grade school. Doesn't much like Pony tagging along.",
+values:["Friendship with Soda","Cars"],
+rels:[["soda","Best friend","Work together at the DX."],["pony","Tension","Thinks Pony is a tagalong kid."]]},
+cherry:{name:"Sherri 'Cherry' Valance",side:"s",sideLabel:"Soc",facts:["Cheerleader","Red hair","Bob's girlfriend"],
+desc:"A Soc who sees past labels. Honest with Pony about how Socs feel. After Bob dies, she spies for the greasers to help stop the violence.",
+values:["Honesty","Fairness","Understanding"],
+rels:[["pony","Unexpected friend","Shares sunsets and honest talk with Pony."],["bob","Boyfriend","Knows Bob's cruel side but also his good side."],["dally","Attraction / conflict","Stands up to him, but admits she could fall for him."]]},
+marcia:{name:"Marcia",side:"s",sideLabel:"Soc",facts:["Cherry's friend","Randy's girlfriend"],
+desc:"Cherry's friend at the drive-in. Easygoing and laughs at Two-Bit's jokes.",
+values:["Fun"],
+rels:[["twobit","Friendly","Enjoys Two-Bit's humor."],["randy","Boyfriend","Leaves with Randy in Ch. 3."]]},
+bob:{name:"Bob Sheldon",side:"s",sideLabel:"Soc",facts:["Cherry's boyfriend","Wears rings","Drinks"],
+desc:"A violent Soc whose rings cut Johnny's face. Spoiled by parents who never set limits. Tries to drown Pony and is killed by Johnny in Ch. 4.",
+values:["Status","Power"],
+rels:[["johnny","Victim / killer","Beat Johnny before the novel; killed by him in Ch. 4."],["pony","Enemy","Holds Pony under the fountain."],["cherry","Girlfriend","Cherry dates him."],["randy","Best friend","Randy is with him in the park."]]},
+randy:{name:"Randy Adderson",side:"s",sideLabel:"Soc",facts:["Bob's best friend","Marcia's boyfriend"],
+desc:"Bob's best friend, present at the fountain. Becomes more important later as a Soc who is tired of fighting.",
+values:["Friendship"],
+rels:[["bob","Best friend","With Bob the night he dies."],["marcia","Girlfriend","Dates Marcia."]]},
+jerry:{name:"Jerry Wood",side:"o",sideLabel:"Adult",facts:["Schoolteacher","At the fire"],
+desc:"The teacher in charge of the children at the church fire. Rides with Pony in the ambulance and can't believe greasers would be heroes.",
+values:["Kindness"],
+rels:[["pony","Witness","Sees Pony and Johnny save the kids and calls them heroes."]]}
+};
+
+const THEMES=[
+{t:"Class conflict & stereotypes",d:"The greasers and Socs are divided by money, but the book keeps showing that the labels don't tell the whole story.",
+ev:[["Ch. 1","Socs jump Pony for being a greaser; Pony describes Socs as rich kids who get away with anything."],["Ch. 2–3","Cherry says things are rough all over; Socs have problems too."],["Ch. 3","Pony and Cherry watch the same sunset."],["Ch. 6","The 'hoods' save children; a teacher is shocked they're greasers."]]},
+{t:"Family",d:"Family isn't only blood. The Curtis brothers fight to stay together, and the gang acts as a family for kids like Johnny.",
+ev:[["Ch. 1","Darry gives up college to raise his brothers."],["Ch. 3","Darry slaps Pony; Johnny says his own parents don't care."],["Ch. 5","Soda's letter shows how much the brothers miss Pony."],["Ch. 6","Darry cries at the hospital; Pony finally understands him."]]},
+{t:"Loyalty",d:"The greasers' strongest value. They stick together no matter what, even when it costs them.",
+ev:[["Ch. 1","The gang rushes to save Pony from the Socs."],["Ch. 4","Johnny kills Bob to save Pony; Dally helps them escape."],["Ch. 5","Dally travels to check on them, risking arrest."],["Ch. 6","Dally pulls Johnny from the burning church."]]},
+{t:"Innocence & growing up",d:"'Nothing gold can stay.' The boys lose their innocence fast after the killing.",
+ev:[["Ch. 1","Pony is still a kid who loves movies and sunsets."],["Ch. 4","A death changes everything; the boys must hide."],["Ch. 5","The Frost poem at sunrise: golden things don't last."],["Ch. 6","Dally fears Johnny will turn hard like him."]]},
+{t:"Identity",d:"Who are you beyond the group you belong to? Pony keeps asking this.",
+ev:[["Ch. 1","Pony feels different from other greasers."],["Ch. 2","Cherry notices Pony isn't like the others."],["Ch. 5","Losing his greaser hair makes Pony feel he's lost himself."],["Ch. 6","Being called a hero gives the boys a new identity."]]},
+{t:"Courage & heroism",d:"Real courage isn't about fighting. It's about doing the right thing.",
+ev:[["Ch. 2","Johnny tells Dally to leave Cherry alone."],["Ch. 4","Johnny acts to save Pony."],["Ch. 5","Johnny admires Southern gentlemen in Gone with the Wind."],["Ch. 6","Johnny and Pony run into the fire; Johnny decides to face the police."]]}
+];
+
+const SYMBOLS=[
+["Sunsets & sunrises","The shared world of Socs and greasers; beauty and hope. Pony and Cherry both watch sunsets (Ch. 3); Pony watches sunrise with Johnny (Ch. 5)."],
+["Hair","Greaser identity and pride. The Socs threaten to cut it (Ch. 1); cutting and bleaching it makes Pony feel lost (Ch. 5)."],
+["'Nothing Gold Can Stay'","Robert Frost's poem about how innocence and beauty fade. Pony recites it at sunrise (Ch. 5)."],
+["Gone with the Wind","Courage and gallantry. Johnny sees the Southern gentlemen as brave like Dally (Ch. 5)."],
+["The blue Mustang","The threat of the Socs. Tied to Johnny's beating and Bob's gang (Ch. 2–4)."],
+["Rings & madras","Soc wealth used as a weapon. Bob's rings cut Johnny's face."],
+["Switchblade","Protection and fear. Johnny carries one after his beating and uses it on Bob (Ch. 4)."],
+["The church","A refuge where the boys hide and bond — and later the place where they become heroes (Ch. 5–6)."]
+];
+
+const QUIZ=[
+[1,"Who narrates The Outsiders?",["Sodapop Curtis","Ponyboy Curtis","Johnny Cade","Darry Curtis"],1,"The story is told by fourteen-year-old Ponyboy."],
+[1,"Why is Darry raising his brothers?",["Their parents moved away","Their parents died in a car wreck","Their parents are in jail","Their father left"],1,"Their parents were killed in an auto wreck, so Darry became guardian."],
+[1,"What do the Socs threaten to do to Pony in Chapter 1?",["Steal his money","Cut his hair","Break his arm","Take his shoes"],1,"They threaten to give him a haircut, an attack on his greaser identity."],
+[1,"Where does Sodapop work?",["A movie theater","A grocery store","A gas station (the DX)","A roofing company"],2,"Soda dropped out and works at the DX gas station with Steve."],
+[1,"What did Darry give up to care for his brothers?",["A job in New York","A football scholarship to college","His car","His girlfriend"],1,"He had an athletic scholarship but works two jobs instead."],
+[2,"What does Cherry do when Dally harasses her?",["Calls the police","Throws a Coke in his face","Leaves the drive-in","Slaps him"],1,"She throws her drink at him — a Soc standing up to the gang's toughest member."],
+[2,"Who tells Dally to leave the girls alone?",["Two-Bit","Ponyboy","Johnny","Steve"],2,"Quiet Johnny speaks up, surprising everyone because he idolizes Dally."],
+[2,"What car were the Socs driving when they beat Johnny?",["A red Corvair","A black Cadillac","A blue Mustang","A white Ford"],2,"A blue Mustang — which reappears in Chapters 3 and 4."],
+[3,"What do Pony and Cherry discover they both love?",["Horses","Watching sunsets","Paul Newman movies","Football"],1,"The sunset shows that both groups share the same world."],
+[3,"Why does Cherry leave with Bob and Randy?",["She loves Bob more than Pony","To prevent a fight","Her parents called","Pony told her to"],1,"She goes with them so the Socs and greasers won't fight."],
+[3,"What happens when Pony gets home at 2 a.m.?",["Soda grounds him","Darry slaps him","Nobody notices","Two-Bit covers for him"],1,"Darry slaps him, and Pony runs away."],
+[4,"How does Bob try to hurt Ponyboy?",["Stabbing him","Drowning him in a fountain","Running him over","Burning him"],1,"Bob's friends hold Pony's head under the fountain water."],
+[4,"Who kills Bob?",["Dally","Ponyboy","Johnny","Randy"],2,"Johnny stabs Bob to save Pony's life."],
+[4,"What does Dally give Johnny and Pony?",["A car","Money and a gun","A map to Texas","A fake ID"],1,"About fifty dollars and a loaded gun, plus instructions to hide."],
+[4,"Where does Dally send them?",["His uncle's farm","An abandoned church in Windrixville","A motel in Texas","New York"],1,"An old church on Jay Mountain near Windrixville."],
+[5,"Which book does Johnny buy for Pony?",["Great Expectations","Gone with the Wind","Huckleberry Finn","The Red Badge of Courage"],1,"Johnny admires its Southern gentlemen."],
+[5,"Why does Johnny cut and bleach Pony's hair?",["As a joke","So they won't be recognized","Pony asked him to","It was too long to grease"],1,"It's a disguise, but Pony feels he's losing his identity."],
+[5,"Which poem does Pony recite?",["'The Road Not Taken'","'Nothing Gold Can Stay'","'Stopping by Woods'","'Fire and Ice'"],1,"Robert Frost's poem about how beautiful things fade."],
+[5,"What news does Dally bring?",["Bob survived","Cherry is spying for the greasers and a rumble is set","Darry left town","The police found the church"],1,"Cherry is helping the greasers; the rumble is planned."],
+[6,"What does Johnny decide in the car with Dally?",["To move to Texas","To turn himself in","To join the Socs","To stay in the church forever"],1,"He wants his life back and decides to face the police."],
+[6,"Why does Dally not want Johnny to go to jail?",["Jail is too far","It will make him hard like Dally","Johnny would miss the rumble","Darry would be mad"],1,"Dally knows jail hardened him and wants to protect Johnny from that."],
+[6,"How is Johnny hurt?",["Hit by a car","A burning piece of the roof falls on him","A Soc stabs him","He falls off the train"],1,"A burning timber falls on him; his back is broken."],
+[6,"What does Pony realize at the hospital?",["Soda is leaving","Darry really loves him","Cherry betrayed them","Johnny is angry at him"],1,"Darry cries, and Pony understands his brother's fear and love."],
+[6,"Who calls Pony and Johnny heroes?",["Cherry","Randy","Jerry Wood, the teacher","A police officer"],2,"Jerry Wood rides with Pony and is amazed that greasers would do this."]
+];
+
+const FLASH=[
+...Object.values(PEOPLE).map(p=>({k:"people",f:p.name,b:p.desc})),
+...SYMBOLS.map(s=>({k:"terms",f:s[0],b:s[1]})),
+{k:"terms",f:"Greasers",b:"Poor East Side boys with long greased hair. Labeled as hoods; loyal to each other."},
+{k:"terms",f:"Socs",b:"Short for Socials. Rich West Side kids who jump greasers and rarely get in trouble."},
+{k:"terms",f:"Rumble",b:"A planned gang fight between greasers and Socs, set up by the end of Chapter 5."},
+{k:"terms",f:"Nightly Double",b:"The drive-in movie theater where Pony meets Cherry in Chapter 2."},
+{k:"events",f:"The fountain",b:"Ch. 4: Bob tries to drown Pony; Johnny kills Bob with his switchblade."},
+{k:"events",f:"The slap",b:"Ch. 3: Darry slaps Pony for coming home at 2 a.m.; Pony runs away."},
+{k:"events",f:"The church fire",b:"Ch. 6: Pony and Johnny save trapped children; Johnny is badly hurt."},
+{k:"events",f:"The haircut",b:"Ch. 5: Johnny cuts and bleaches Pony's hair as a disguise."},
+{k:"events",f:"The Coke",b:"Ch. 2: Cherry throws her Coke at Dally when he harasses her."},
+{k:"events",f:"The 3:15 freight",b:"Ch. 4: The train Dally tells the boys to take to Windrixville."}
+];
+
+const PROMPTS=[
+["How does Ponyboy's view of Darry change in Chapters 1–6?","Ch. 1 Darry scolds him; Ch. 3 the slap; Ch. 5 Soda's letter; Ch. 6 Darry cries at the hospital.","Early on, Pony sees Darry as cold and strict, but after the fire Pony realizes Darry's harshness came from love and fear."],
+["Are the Socs and greasers really that different?","Ch. 2 Cherry: things are rough all over; Ch. 3 sunsets; Ch. 5 Cherry spies to stop violence; Ch. 6 greasers as heroes.","Though money divides them, Hinton shows through Cherry and Ponyboy that both groups share the same feelings and struggles."],
+["How does Johnny change from Chapter 1 to Chapter 6?","Ch. 1 afraid after beating; Ch. 2 stands up to Dally; Ch. 4 saves Pony; Ch. 6 decides to turn himself in and saves the kids.","Johnny transforms from the gang's most frightened member into its bravest, driven by loyalty and a new sense of right and wrong."],
+["What does 'Nothing Gold Can Stay' mean in the novel?","Ch. 5 sunrise and the poem; Ch. 4 the killing ends their innocence; Ch. 6 Dally's fear of Johnny turning hard.","The poem captures how Pony and Johnny's innocence begins to fade once violence enters their lives."],
+["Is Dally a good or bad character?","Ch. 1 jail record, tough; Ch. 2 harasses Cherry; Ch. 4 helps the boys escape; Ch. 6 saves Johnny from the fire.","Dally breaks rules and seems heartless, but his loyalty to Johnny shows he has a caring side."]
+];
+
+
+</script>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const store={get(k,d){try{const v=localStorage.getItem('os_'+k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem('os_'+k,JSON.stringify(v))}catch(e){}}};
+const I={
+ check:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3L13 4.5"/></svg>',
+ x:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 4l8 8M12 4l-8 8"/></svg>',
+ plus:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg>',
+ left:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg>',
+ right:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"/></svg>',
+ pin:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 14s5-4.2 5-8A5 5 0 003 6c0 3.8 5 8 5 8z"/><circle cx="8" cy="6" r="1.8"/></svg>',
+ book:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M2 3h4.5A1.5 1.5 0 018 4.5V13a1.5 1.5 0 00-1.5-1.5H2zM14 3H9.5A1.5 1.5 0 008 4.5V13a1.5 1.5 0 011.5-1.5H14z"/></svg>',
+ people:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="6" cy="5.5" r="2.3"/><path d="M1.8 13.5c.6-2.3 2.2-3.5 4.2-3.5s3.6 1.2 4.2 3.5"/><circle cx="11.5" cy="6" r="1.8"/><path d="M11 10c1.7 0 2.8 1 3.3 3"/></svg>',
+ map:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="3.5" cy="4" r="1.8"/><circle cx="12.5" cy="4" r="1.8"/><circle cx="8" cy="12" r="1.8"/><path d="M5 5l2 5.3M11 5l-2 5.3M5.3 4h5.4"/></svg>',
+ bulb:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M6 12.5h4M6.5 14.5h3M8 1.8a4.2 4.2 0 00-2.4 7.7c.5.4.9 1 .9 1.6v.4h3v-.4c0-.6.4-1.2.9-1.6A4.2 4.2 0 008 1.8z"/></svg>',
+ quiz:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="8" cy="8" r="6.2"/><path d="M6.3 6.2a1.8 1.8 0 013.5.5c0 1.2-1.8 1.5-1.8 2.6M8 11.4v.1"/></svg>',
+ cards:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="2" y="4.5" width="9" height="9.5" rx="1.5"/><path d="M5 2h7.5A1.5 1.5 0 0114 3.5V11"/></svg>',
+ pen:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M11 2.5l2.5 2.5L6 12.5l-3.3.8.8-3.3z"/></svg>'
+};
+function toast(msg){const t=$('#toast');t.innerHTML=I.check+msg;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),1800)}
+const initials=n=>n.replace(/'[^']*'/g,'').split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0]).join('');
+const short=id=>({pony:"Ponyboy",darry:"Darry",soda:"Sodapop",johnny:"Johnny",dally:"Dally",twobit:"Two-Bit",steve:"Steve",cherry:"Cherry",marcia:"Marcia",bob:"Bob",randy:"Randy",jerry:"Jerry Wood"})[id];
+const WHEN=["Evening, walking home","Next night, drive-in","Same night, 2 a.m.","2:30 a.m., the park","About five days","Day of the fire"];
+
+/* ---------- tabs ---------- */
+const TABS=[["chapters","Chapters",I.book],["characters","Characters",I.people],["map","Relationship Map",I.map],["themes","Themes & Symbols",I.bulb],["quiz","Quiz",I.quiz],["cards","Flashcards",I.cards],["essay","Essay Help",I.pen]];
+$('#tablist').innerHTML=TABS.map(t=>`<button role="tab" data-tab="${t[0]}" aria-selected="false">${t[2]}${t[1]}</button>`).join('');
+let curTab='chapters';
+function showTab(id,scroll){curTab=id;$$('#tablist button').forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===id));$$('section.panel').forEach(s=>s.hidden=s.id!==id);store.set('tab',id);
+  const b=$(`#tablist [data-tab="${id}"]`);b&&b.scrollIntoView({block:'nearest',inline:'nearest'});
+  if(scroll){const nav=$('nav.tabs');const y=nav.getBoundingClientRect().top+scrollY;if(scrollY>y)scrollTo({top:y})}}
+$$('#tablist button').forEach(b=>b.onclick=()=>showTab(b.dataset.tab,true));
+
+/* ---------- chapters ---------- */
+let done=store.get('done',[]),curCh=store.get('ch',1);
+function renderProgress(){$('#segs').innerHTML=CHAPTERS.map(c=>`<button class="${done.includes(c.n)?'done':''}" data-ch="${c.n}" aria-label="Chapter ${c.n}${done.includes(c.n)?', reviewed':''}">${c.n}</button>`).join('');
+  $$('#segs button').forEach(b=>b.onclick=()=>{curCh=+b.dataset.ch;store.set('ch',curCh);renderChapters();showTab('chapters',true)});
+  $('#progLabel').textContent=done.length===6?'All six chapters reviewed':`${done.length} of 6 chapters reviewed`}
+function renderRail(){$('#rail').innerHTML=CHAPTERS.map((c,i)=>`<button class="chcard" aria-pressed="${c.n===curCh}" data-ch="${c.n}"><span class="num">CHAPTER ${c.n}</span><span class="t">${c.title}</span><span class="when">${WHEN[i]}</span>${done.includes(c.n)?`<span class="check">${I.check}</span>`:''}</button>`).join('');
+  $$('#rail .chcard').forEach(b=>b.onclick=()=>{curCh=+b.dataset.ch;store.set('ch',curCh);renderChapters()});
+  const sel=$('#rail [aria-pressed="true"]');sel&&sel.scrollIntoView({block:'nearest',inline:'nearest'})}
+function renderChapter(){const c=CHAPTERS[curCh-1],isDone=done.includes(c.n);
+$('#chapterBody').innerHTML=`
+<div class="ch-head"><div class="bignum" aria-hidden="true">${c.n}</div><div class="stack"><span class="label">Chapter ${c.n} of 6</span><h2>${c.title}</h2><p class="setting">${I.pin}<span>${c.setting}</span></p><div>${c.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div></div></div>
+<div class="ch-grid">
+  <div class="stack" style="gap:20px">
+    <div class="card summary"><span class="label">Summary</span><p>${c.summary}</p></div>
+    <div class="why"><span class="label">Why this chapter matters</span><p>${c.why}</p></div>
+  </div>
+  <div class="card"><span class="label">Key events, in order</span><ol class="timeline">${c.events.map(e=>`<li>${e}</li>`).join('')}</ol></div>
+</div>
+<div class="stack" style="gap:14px"><div class="stack" style="gap:4px"><h3>Check your understanding</h3><p class="lede" style="font-size:.95rem">Answer in your head first, then open each question to check.</p></div>
+<div class="qs">${c.qs.map(q=>`<details class="q"><summary><span class="plus">${I.plus}</span><span>${q[0]}</span></summary><div class="a">${q[1]}</div></details>`).join('')}</div></div>
+<div class="ch-foot">
+  <button class="btn ghost prev" id="prevCh" ${c.n===1?'disabled':''}>${I.left}Chapter ${Math.max(1,c.n-1)}</button>
+  <button class="btn markdone ${isDone?'on':''}" id="markDone">${isDone?I.check+'Reviewed':'Mark as reviewed'}</button>
+  <button class="btn ghost next" id="nextCh" ${c.n===6?'disabled':''}>Chapter ${Math.min(6,c.n+1)}${I.right}</button>
+</div>`;
+$('#markDone').onclick=()=>{const was=done.includes(c.n);done=was?done.filter(x=>x!==c.n):[...done,c.n].sort();store.set('done',done);renderChapters();renderProgress();if(!was)toast(`Chapter ${c.n} marked as reviewed`)};
+$('#prevCh').onclick=()=>{curCh--;store.set('ch',curCh);renderChapters();showTab('chapters',true)};
+$('#nextCh').onclick=()=>{curCh++;store.set('ch',curCh);renderChapters();showTab('chapters',true)}}
+function renderChapters(){renderRail();renderChapter()}
+
+/* ---------- characters ---------- */
+let curP='pony',rFilter='all';
+function renderRoster(){$('#roster').innerHTML=Object.entries(PEOPLE).filter(([,p])=>rFilter==='all'||(rFilter==='g'?p.side==='g':p.side!=='g')).map(([id,p])=>`<button data-id="${id}" aria-pressed="${id===curP}"><span class="av ${p.side}">${initials(p.name)}</span><span>${short(id)}<span class="sm">${p.facts[0]}${p.facts[1]?' · '+p.facts[1]:''}</span></span></button>`).join('');
+$$('#roster button').forEach(b=>b.onclick=()=>openPerson(b.dataset.id))}
+$$('#rosterFilter button').forEach(b=>b.onclick=()=>{rFilter=b.dataset.f;$$('#rosterFilter button').forEach(x=>x.setAttribute('aria-pressed',x===b));renderRoster()});
+function openPerson(id,scroll){curP=id;renderRoster();const p=PEOPLE[id];
+$('#profile').innerHTML=`<div class="p-head"><span class="av lg ${p.side}">${initials(p.name)}</span><div class="stack" style="gap:8px"><span class="pill ${p.side}">${p.sideLabel}</span><h2>${p.name}</h2></div></div>
+<div>${p.facts.map(f=>`<span class="tag">${f}</span>`).join('')}</div>
+<p class="p-desc">${p.desc}</p>
+<div class="stack"><span class="label">What they value</span><div class="values">${p.values.map(v=>`<span>${v}</span>`).join('')}</div></div>
+<div class="stack"><span class="label">Relationships</span><div class="rels">${p.rels.map(r=>`<button data-go="${r[0]}"><span class="av ${PEOPLE[r[0]].side}">${initials(PEOPLE[r[0]].name)}</span><span><span class="kind">${r[1]}</span><b>${short(r[0])}</b><p>${r[2]}</p></span></button>`).join('')}</div></div>`;
+$$('#profile [data-go]').forEach(b=>b.onclick=()=>openPerson(b.dataset.go,true));
+if(scroll&&innerWidth<760)$('#profile').scrollIntoView({behavior:'smooth',block:'start'})}
+
+/* ---------- map ---------- */
+const EDGE_STYLE={f:['var(--sunset)','','Family',3],l:['var(--dusk)','','Friendship / loyalty',2.5],c:['var(--rose)','7 5','Conflict',2.5],u:['var(--gold)','2 6','Unexpected connection',3]};
+$('#legend').innerHTML=Object.values(EDGE_STYLE).map(s=>`<span><svg viewBox="0 0 30 8"><line x1="1" y1="4" x2="29" y2="4" stroke="${s[0]}" stroke-width="${s[3]}" stroke-dasharray="${s[1]}" stroke-linecap="round"/></svg>${s[2]}</span>`).join('');
+function renderMap(){
+const pos={pony:[330,215],darry:[140,105],soda:[140,315],steve:[50,410],johnny:[515,215],dally:[560,85],twobit:[330,410],cherry:[480,345],marcia:[640,420],bob:[720,240],randy:[790,370],jerry:[330,60]};
+const edges=[["pony","darry","f"],["pony","soda","f"],["darry","soda","f"],["pony","johnny","l"],["johnny","dally","l"],["soda","steve","l"],["pony","twobit","l"],["pony","dally","l"],["pony","cherry","u"],["dally","cherry","c"],["twobit","marcia","u"],["johnny","bob","c"],["pony","bob","c"],["bob","cherry","l"],["bob","randy","l"],["randy","marcia","l"],["jerry","pony","u"]];
+const col={g:"var(--sunset)",s:"var(--dusk)",o:"var(--muted)"};
+let s=`<svg viewBox="0 0 860 470" role="img" aria-label="Character relationship map">`;
+s+=`<rect x="600" y="10" width="250" height="450" rx="16" fill="var(--soft)" opacity=".6"/>`;
+s+=`<text x="18" y="30" font-size="12" style="fill:var(--muted);font-family:var(--mono);letter-spacing:.12em">GREASERS · EAST SIDE</text><text x="838" y="34" font-size="12" text-anchor="end" style="fill:var(--muted);font-family:var(--mono);letter-spacing:.12em">SOCS · WEST SIDE</text>`;
+edges.forEach(([a,b,t])=>{const[x1,y1]=pos[a],[x2,y2]=pos[b],st=EDGE_STYLE[t];s+=`<line data-a="${a}" data-b="${b}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${st[0]}" stroke-width="${st[3]}" stroke-dasharray="${st[1]}" stroke-linecap="round"/>`});
+Object.entries(pos).forEach(([id,[x,y]])=>{const p=PEOPLE[id];s+=`<g class="node" data-id="${id}" tabindex="0" role="button" aria-label="${short(id)}"><circle class="ring" cx="${x}" cy="${y}" r="28" fill="var(--surface)" stroke="${col[p.side]}" stroke-width="3"/><text x="${x}" y="${y+6}" text-anchor="middle" font-size="17" style="font-family:var(--display);font-weight:800;fill:${col[p.side]}">${initials(p.name)}</text><text x="${x}" y="${y+50}" text-anchor="middle" font-size="14" font-weight="700">${short(id)}</text></g>`});
+s+=`</svg>`;$('#mapbox').innerHTML=s;
+const svg=$('#mapbox svg');
+$$('.node').forEach(n=>{const id=n.dataset.id;
+ const on=()=>{svg.classList.add('focus');n.classList.add('hot');$$('#mapbox line').forEach(l=>{if(l.dataset.a===id||l.dataset.b===id){l.classList.add('hot');$(`.node[data-id="${l.dataset.a===id?l.dataset.b:l.dataset.a}"]`).classList.add('hot')}})};
+ const off=()=>{svg.classList.remove('focus');$$('#mapbox .hot').forEach(e=>e.classList.remove('hot'))};
+ const go=()=>{off();showTab('characters',true);openPerson(id)};
+ n.onmouseenter=on;n.onmouseleave=off;n.onfocus=on;n.onblur=off;n.onclick=go;n.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}}})}
+
+/* ---------- themes ---------- */
+$('#themeGrid').innerHTML=THEMES.map(t=>`<div class="card theme-card"><h3>${t.t}</h3><p style="color:var(--muted)">${t.d}</p><div class="evlist">${t.ev.map(e=>`<div class="ev"><b>${e[0]}</b><span>${e[1]}</span></div>`).join('')}</div></div>`).join('');
+$('#symbolGrid').innerHTML=SYMBOLS.map(s=>`<div class="sym"><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join('');
+
+/* ---------- quiz ---------- */
+let qList=[],qi=0,score=0,answered=false,marks=[],missed=[];
+const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+function startQuiz(){const f=$('#quizFilter').value;qList=shuffle(QUIZ.filter(q=>f==='all'||q[0]==+f));qi=0;score=0;marks=[];missed=[];renderQ()}
+function progBar(){return `<div class="qprog">${qList.map((_,i)=>`<i class="${marks[i]||(i===qi?'c':'')}"></i>`).join('')}</div>`}
+function renderQ(){const sh=$('#quizShell');
+if(qi>=qList.length){const pct=Math.round(score/qList.length*100),key=$('#quizFilter').value,best=store.get('best',{});if(!best[key]||pct>best[key])best[key]=pct;store.set('best',best);
+ const C=2*Math.PI*54,col=pct>=80?'var(--good)':pct>=60?'var(--gold)':'var(--bad)';
+ sh.innerHTML=`${progBar()}<div class="card qcard"><div class="result"><svg class="ring" viewBox="0 0 132 132"><circle cx="66" cy="66" r="54" fill="none" stroke="var(--line)" stroke-width="12"/><circle cx="66" cy="66" r="54" fill="none" stroke="${col}" stroke-width="12" stroke-linecap="round" stroke-dasharray="${C*pct/100} ${C}" transform="rotate(-90 66 66)"/><text x="66" y="76" text-anchor="middle" font-size="34">${pct}%</text></svg>
+ <div class="stack"><span class="label">${score} of ${qList.length} correct · Best ${best[key]}%</span><h2 style="font-size:2rem">${pct>=90?'Excellent work':pct>=70?'Solid understanding':'Keep studying'}</h2><p style="color:var(--muted)">${pct>=90?'You know these chapters well. Try the essay prompts next.':pct>=70?'Review the questions you missed below, then try again.':'Reread the chapter summaries for the questions below, then try again.'}</p></div></div>
+ ${missed.length?`<div class="stack"><span class="label">Review what you missed</span><div class="missed">${missed.map(q=>`<div><span class="label">Chapter ${q[0]}</span><span>${q[1]}</span><span class="ans">${q[2][q[3]]}</span></div>`).join('')}</div></div>`:''}
+ <div class="row"><button class="btn" id="again">Try again</button><button class="btn ghost" id="toCh">Review chapters</button></div></div>`;
+ $('#again').onclick=startQuiz;$('#toCh').onclick=()=>showTab('chapters',true);return}
+const q=qList[qi];answered=false;
+sh.innerHTML=`${progBar()}<div class="card qcard"><div class="row spread"><span class="label">Question ${qi+1} of ${qList.length} · Chapter ${q[0]}</span><span class="label">Score ${score}</span></div><div class="prompt">${q[1]}</div><div class="opts">${q[2].map((o,i)=>`<button data-i="${i}"><span class="k">${i+1}</span><span>${o}</span><span class="mk"></span></button>`).join('')}</div><div id="qx"></div></div>`;
+sh.querySelectorAll('.opts button').forEach(b=>b.onclick=()=>answer(+b.dataset.i))}
+function answer(i){if(answered)return;answered=true;const q=qList[qi],right=i===q[3];if(right)score++;else missed.push(q);marks[qi]=right?'r':'w';
+$$('#quizShell .opts button').forEach((x,k)=>{x.disabled=true;if(k===q[3]){x.classList.add('right');x.querySelector('.mk').innerHTML=I.check;x.querySelector('.mk').style.color='var(--good)'}else if(k===i){x.classList.add('wrong');x.querySelector('.mk').innerHTML=I.x;x.querySelector('.mk').style.color='var(--bad)'}else x.classList.add('dim')});
+$('#quizShell .qprog').outerHTML=progBar();
+$('#qx').innerHTML=`<div class="explain"><b style="color:${right?'var(--good)':'var(--bad)'}">${right?'Correct.':'Not quite.'}</b>${q[4]}</div><div class="row" style="margin-top:16px"><button class="btn" id="nextQ">${qi+1<qList.length?'Next question':'See results'}${I.right}</button></div>`;
+$('#nextQ').onclick=()=>{qi++;renderQ()};$('#nextQ').focus({preventScroll:true})}
+$('#quizFilter').onchange=startQuiz;
+
+/* ---------- flashcards ---------- */
+let known=store.get('known',[]),deck=[],fi=0;
+const KINDS={people:"Character",terms:"Term / symbol",events:"Key event"};
+function buildDeck(){const k=$('#deckSel').value;deck=FLASH.filter(c=>(k==='all'||c.k===k)&&!known.includes(c.f));fi=0;showCard()}
+function showCard(){$('#flash').classList.remove('flipped');const k=$('#deckSel').value,total=FLASH.filter(c=>k==='all'||c.k===k).length,kn=total-deck.length;
+$('#knownCount').textContent=`${kn} of ${total} known`;$('#fcBar').style.width=(kn/total*100)+'%';
+if(!deck.length){$('#fcKind').textContent=$('#fcKind2').textContent="Deck complete";$('#fcFront').textContent="You know them all";$('#fcBack').textContent="Press Reset deck to study again.";$('#deckCount').textContent="0 left";return}
+const c=deck[fi];setTimeout(()=>{$('#fcBack').textContent=c.b},deck._flipped?250:0);deck._flipped=false;
+$('#fcKind').textContent=$('#fcKind2').textContent=KINDS[c.k];$('#fcFront').textContent=c.f;$('#deckCount').textContent=`Card ${fi+1} of ${deck.length}`}
+const flip=()=>{$('#flash').classList.toggle('flipped')};
+function move(d){if(!deck.length)return;deck._flipped=$('#flash').classList.contains('flipped');fi=(fi+d+deck.length)%deck.length;showCard()}
+$('#flash').onclick=flip;$('#flash').onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();flip()}};
+$('#fcPrev').innerHTML=I.left;$('#fcNext').innerHTML=I.right;
+$('#fcNext').onclick=()=>move(1);$('#fcPrev').onclick=()=>move(-1);$('#fcAgain').onclick=()=>move(1);
+$('#fcKnow').onclick=()=>{if(!deck.length)return;known.push(deck[fi].f);store.set('known',known);deck.splice(fi,1);if(fi>=deck.length)fi=0;showCard();if(!deck.length)toast('Deck complete')};
+$('#fcShuffle').onclick=()=>{deck=shuffle(deck);fi=0;showCard();toast('Deck shuffled')};
+$('#fcReset').onclick=()=>{known=[];store.set('known',known);buildDeck();toast('Deck reset')};
+$('#deckSel').onchange=buildDeck;
+
+/* ---------- keyboard ---------- */
+document.addEventListener('keydown',e=>{if(/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)||e.metaKey||e.ctrlKey||e.altKey)return;
+ if(curTab==='quiz'){const n=+e.key;if(!answered&&n>=1&&n<=4&&qList[qi]&&n<=qList[qi][2].length){e.preventDefault();answer(n-1)}else if(e.key==='Enter'&&answered&&$('#nextQ')&&document.activeElement!==$('#nextQ')){e.preventDefault();$('#nextQ').click()}}
+ if(curTab==='cards'){if(e.key==='ArrowRight'){e.preventDefault();move(1)}else if(e.key==='ArrowLeft'){e.preventDefault();move(-1)}else if(e.key===' '&&!/BUTTON/.test(e.target.tagName)||e.key===' '&&e.target.id==='flash'){e.preventDefault();flip()}}});
+
+/* ---------- essay ---------- */
+$('#prompts').innerHTML=PROMPTS.map((p,i)=>`<div class="card prompt-card"><span class="label">Prompt ${i+1}</span><p class="pq">${p[0]}</p><details class="q"><summary><span class="plus">${I.plus}</span><span>Evidence to use</span></summary><div class="a">${p[1]}</div></details><details class="q"><summary><span class="plus">${I.plus}</span><span>Sample thesis</span></summary><div class="a">${p[2]}</div></details><button class="btn quiet" data-use="${i}" style="justify-self:start">Use this prompt${I.right}</button></div>`).join('');
+$$('[data-use]').forEach(b=>b.onclick=()=>{const p=PROMPTS[+b.dataset.use];$('#b1').value=p[2];buildOut();$('#b2').focus();$('#b1').scrollIntoView({behavior:'smooth',block:'center'});toast('Sample thesis added as your claim')});
+const fields=['b1','b2','b3','b4','b5'],LBL=['CLAIM','EVIDENCE','ANALYSIS','MORE EVIDENCE','CONCLUSION'];let view='para';
+const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'})[c]);
+function buildOut(){const v=fields.map(f=>$('#'+f).value.trim());store.set('draft',v);const o=$('#builderOut');
+ const words=v.join(' ').split(/\s+/).filter(Boolean).length;$('#wordCount').textContent=`${words} word${words===1?'':'s'}`;
+ if(!v.some(Boolean)){o.className='out empty';o.textContent='Your paragraph appears here as you type.';return}
+ o.className='out';
+ if(view==='para')o.textContent=v.filter(Boolean).map(s=>/[.!?"]$/.test(s)?s:s+'.').join(' ');
+ else o.innerHTML=v.map((s,i)=>s?`<span class="lbl">${LBL[i]}</span>${esc(s)}`:'').join('')}
+fields.forEach(f=>$('#'+f).addEventListener('input',buildOut));
+$$('#viewSeg button').forEach(b=>b.onclick=()=>{view=b.dataset.v;$$('#viewSeg button').forEach(x=>x.setAttribute('aria-pressed',x===b));buildOut()});
+const saved=store.get('draft',null);if(saved)fields.forEach((f,i)=>$('#'+f).value=saved[i]||'');
+$('#fillExample').onclick=()=>{const ex=["Johnny grows from the most frightened member of the gang into its bravest.","In Chapter 4, when Bob and the Socs hold Ponyboy under the fountain, Johnny stabs Bob to save him.","Johnny had been terrified of Socs since his beating, yet he acts without hesitation when his friend's life is at stake. His loyalty to Pony is stronger than his fear.","In Chapter 6, Johnny runs into the burning church to save children he doesn't even know.","Johnny's change shows that courage comes from caring about others, not from being tough."];fields.forEach((f,i)=>$('#'+f).value=ex[i]);buildOut();toast('Example loaded')};
+$('#clearBuilder').onclick=()=>{fields.forEach(f=>$('#'+f).value='');buildOut()};
+$('#copyOut').onclick=()=>{const el=$('#builderOut');if(el.classList.contains('empty'))return;const t=el.innerText;
+ const fb=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);toast('Selected. Press Ctrl or Cmd + C to copy')};
+ try{navigator.clipboard.writeText(t).then(()=>toast('Copied to clipboard'),fb)}catch(e){fb()}};
+const CHECK=["My thesis answers the exact question asked, in one clear sentence.","Every piece of evidence names the chapter and the specific moment.","After each piece of evidence, I explain why it matters. Evidence alone isn't analysis.","Character names are spelled right: Ponyboy, Sodapop, Darry, Dallas (Dally), Two-Bit, Johnny, Cherry.","I write about the book in present tense: \"Johnny kills Bob,\" not \"Johnny killed Bob.\"","My conclusion links my point to a theme like class, family or loyalty."];
+let ticks=store.get('ticks',[]);
+function renderChecklist(){$('#checklist').innerHTML=CHECK.map((c,i)=>`<li class="${ticks.includes(i)?'on':''}" data-i="${i}" role="checkbox" aria-checked="${ticks.includes(i)}" tabindex="0"><span class="box">${I.check}</span><span>${c}</span></li>`).join('');
+ $('#checkCount').textContent=`${ticks.length} of ${CHECK.length} done`;
+ $$('#checklist li').forEach(li=>{const t=()=>{const i=+li.dataset.i;ticks=ticks.includes(i)?ticks.filter(x=>x!==i):[...ticks,i];store.set('ticks',ticks);renderChecklist();$(`#checklist li[data-i="${i}"]`).focus()};li.onclick=t;li.onkeydown=e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();t()}}})}
+
+/* ---------- init ---------- */
+renderProgress();renderChapters();renderRoster();openPerson('pony');renderMap();startQuiz();buildDeck();buildOut();renderChecklist();
+const h=location.hash.slice(1);showTab(TABS.some(t=>t[0]===h)?h:store.get('tab','chapters'));
+</script>
+</body>
+</html>
